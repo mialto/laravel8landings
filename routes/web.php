@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LandingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('landings/disenoWeb', [LandingsController::class, 'disenoWeb'])->name('landings.disenoWeb');
+Route::get('landings/auditoriaSEO', [LandingsController::class, 'auditoriaSEO'])->name('landings.auditoriaSEO');
+Route::get('landings/soporteWeb', [LandingsController::class, 'soporteWeb'])->name('landings.soporteWeb');
+Route::get('landings/auditoriaWeb', [LandingsController::class, 'auditoriaWeb'])->name('landings.auditoriaWeb');
+Route::get('landings/consultoriaWeb', [LandingsController::class, 'consultoriaWeb'])->name('landings.consultoriaWeb');
